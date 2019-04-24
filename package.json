@@ -1,0 +1,22 @@
+{
+  "name": "demotsjquery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "node dist/server.js",
+    "build-ts": "tsc && live-server public/",
+    "watch-ts": "concurrently --kill-others \"tsc -w\" \"live-server public/\"",
+    "tslint": "tslint -c tslint.json -p tsconfig.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jquery": "^3.3.29"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "liveserver": "^0.1.20",
+    "typescript": "^3.4.5"
+  }
+}
