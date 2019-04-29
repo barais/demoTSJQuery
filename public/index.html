@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>    
+    
 </head>
 <body>
     <h1>jQuery in TypeScript</h1>
@@ -19,8 +20,23 @@
         </div>
     
     </div>
+    <div id="container" style="width:800px;height:600px;border:1px solid grey"></div>
 
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+    <script src="../node_modules/monaco-editor/min/vs/loader.js"></script>
+<script>
+	require.config({ paths: { 'vs': '../node_modules/monaco-editor/min/vs' }});
+	require(['vs/editor/editor.main'], function() {
+		var editor = monaco.editor.create(document.getElementById('container'), {
+			value: [
+				'function x() {',
+				'\tconsole.log("Hello world!");',
+				'}'
+			].join('\n'),
+			language: 'javascript'
+		});
+	});
+</script>
     <script type="text/javascript" src="app.js"></script>   
 </body>
 </html>

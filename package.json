@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/jquery": "^3.3.29"
+    "@types/jquery": "^3.3.29",
+    "monaco-editor": "^0.16.2"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
