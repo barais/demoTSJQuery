@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "serve": "node dist/server.js",
-    "build-ts": "tsc && live-server public/",
-    "watch-ts": "concurrently --kill-others \"tsc -w\" \"live-server public/\"",
+    "build-ts": "tsc && live-server public/ --mount=/node_modules/:./node_modules/",
+    "watch-ts": "concurrently --kill-others \"tsc -w\" \"live-server public/ --mount=/node_modules/:./node_modules/\"",
     "tslint": "tslint -c tslint.json -p tsconfig.json"
   },
   "author": "",
