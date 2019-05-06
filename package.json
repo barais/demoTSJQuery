@@ -6,17 +6,23 @@
   "scripts": {
     "serve": "node dist/server.js",
     "build-ts": "tsc && live-server public/ --mount=/node_modules/:./node_modules/",
-    "watch-ts": "concurrently --kill-others \"tsc -w\" \"live-server public/ --mount=/node_modules/:./node_modules/\"",
+    "watch-ts": "webpack && concurrently --kill-others \"tsc -w\" \"live-server dist/ --mount=/node_modules/:./node_modules/\"",
     "tslint": "tslint -c tslint.json -p tsconfig.json"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/jquery": "^3.3.29",
-    "monaco-editor": "^0.16.2"
+    "css-loader": "^2.1.1",
+    "monaco-editor": "^0.16.2",
+    "monaco-editor-webpack-plugin": "^1.7.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
+    "copy-webpack-plugin": "^5.0.3",
     "liveserver": "^0.1.20",
     "typescript": "^3.4.5"
   }

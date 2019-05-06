@@ -1,3 +1,8 @@
+import * as monaco from 'monaco-editor'
+import * as $ from "jquery";
+
+// import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
+
 class Demo {
     message: string;
 
@@ -18,6 +23,12 @@ class Demo {
 
 let dem = new Demo("bla bla bla bla");
 
+monaco.editor.create(document.getElementById('container'), {
+    value: 'console.log("Hello, world")',
+    language: 'javascript'
+  });
+
+
 $(document).ready(function () {
     $('#btnGo').click(function () {
         dem.ClickGo();
@@ -27,3 +38,7 @@ $(document).ready(function () {
         dem.ClickInfo();
     });
 });
+
+
+
+
